@@ -1,0 +1,118 @@
+/*Reset nas configurações iniciais da página*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Faz com que as áreas configuradas p/ cada elemento respeite o valor definido*/
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr; /*Cria duas colunas no grid > 1ª com uma fração do espaço disponível a 2ª com 4*/
+    grid-template-rows: 15vh 70vh 15vh;/*Cria 3 linhas no grid com a altura nas proporções de 15 70 15 do "view port"*/
+}
+/*ESTILOS SETADOS PARA O HEADER*/
+/*Layout do header*/
+header {
+    background: rgb(16, 112, 179);
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+/*Setando display flex nos elementos do header*/
+header {
+    display: flex;
+    justify-content: space-between; /*alinha os itens no eixo principal, nesse caso o eixo horizontal*/
+    align-items: center;/*alinha os itens no eixo perpendicula (cruzado), nesse caso o eixo vertical;*/
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+}
+
+/*Estilo para o Logotipo*/
+.logo img{
+    width: 100px;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/*Estilo para barra de busca*/
+.busca input[type=text]{
+    width:300px;
+    height:25px;
+    border: none;
+}    
+.busca{
+    float:right;
+    margin:7px;
+}     
+.busca button{
+    background-color: rgb(102, 102, 102);
+    color: #f2f2f2;
+    float: right;
+    padding: 5px 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+} 
+
+/*Estilo links usuários*/
+.links-usuario a {
+    text-decoration: none;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.links-usuario img {
+    filter: invert(1); /*inverte a cor da imagem. Era preta inverteu para branca*/
+}
+
+/*ESTILIZAÇÃO DO MENU VERTICAL*/
+/*Setando configurações iniciais*/
+nav {
+    grid-row-start: 2;
+    grid-row-end:3;
+    background-color: rgb(102, 102, 102);
+}
+
+.menu-vertical-container {
+    
+    /*TENTAR ALINHAR O MENU*/
+}
+
+nav ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: azure;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+/*Configurações do submenu*/
+nav ul li .submenu a {
+    color: rgb(102, 102, 102);
+    text-align: center;
+    font-size: 15px;
+
+}
+
+nav ul .submenu {
+    display:none;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    list-style: none;
+    width: 18%;
+}
+
+nav ul li a img {
+    filter: invert(1); /*inverte a cor da imagem. Era preta inverteu para branca*/
+    
+}
