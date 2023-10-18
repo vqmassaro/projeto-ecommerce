@@ -2,13 +2,19 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*Faz com que as áreas configuradas p/ cada elemento respeite o valor definido*/
+    box-sizing: border-box;
+    /*Faz com que as áreas configuradas p/ cada elemento respeite o valor definido*/
 }
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 4fr; /*Cria duas colunas no grid > 1ª com uma fração do espaço disponível a 2ª com 4*/
-    grid-template-rows: 15vh 70vh 15vh;/*Cria 3 linhas no grid com a altura nas proporções de 15 70 15 do "view port"*/
+    grid-template-columns: 1fr 4fr;
+    /*Cria duas colunas no grid > 1ª com uma fração do espaço disponível a 2ª com 4*/
+    grid-template-rows: 15vh 70vh 15vh;
+    /*Cria 3 linhas no grid com a altura nas proporções de 15 70 15 do "view port"*/
 }
+
 /*ESTILOS SETADOS PARA O HEADER*/
 /*Layout do header*/
 header {
@@ -16,33 +22,38 @@ header {
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
 /*Setando display flex nos elementos do header*/
 header {
     display: flex;
-    justify-content: space-between; /*alinha os itens no eixo principal, nesse caso o eixo horizontal*/
-    align-items: center;/*alinha os itens no eixo perpendicula (cruzado), nesse caso o eixo vertical;*/
+    justify-content: space-between;
+    /*alinha os itens no eixo principal, nesse caso o eixo horizontal*/
+    align-items: center;
+    /*alinha os itens no eixo perpendicula (cruzado), nesse caso o eixo vertical;*/
     padding: 10px 20px;
     flex-wrap: nowrap;
 }
 
 /*Estilo para o Logotipo*/
-.logo img{
+.logo img {
     width: 100px;
     padding-left: 0;
     margin-left: 0;
 }
 
 /*Estilo para barra de busca*/
-.busca input[type=text]{
-    width:300px;
-    height:25px;
+.busca input[type=text] {
+    width: 500px;
+    height: 25px;
     border: none;
-}    
-.busca{
-    float:right;
-    margin:7px;
-}     
-.busca button{
+}
+
+.busca {
+    float: right;
+    margin: 7px;
+}
+
+.busca button {
     background-color: rgb(102, 102, 102);
     color: #f2f2f2;
     float: right;
@@ -51,7 +62,7 @@ header {
     font-size: 12px;
     border: none;
     cursor: pointer;
-} 
+}
 
 /*Estilo links usuários*/
 .links-usuario a {
@@ -63,24 +74,35 @@ header {
 }
 
 .links-usuario img {
-    filter: invert(1); /*inverte a cor da imagem. Era preta inverteu para branca*/
+    filter: invert(1);
+    /*inverte a cor da imagem. Era preta inverteu para branca*/
 }
 
 /*ESTILIZAÇÃO DO MENU VERTICAL*/
 /*Setando configurações iniciais*/
 nav {
     grid-row-start: 2;
-    grid-row-end:3;
+    grid-row-end: 3;
     background-color: rgb(102, 102, 102);
 }
 
-.menu-vertical-container {
-    
-    /*TENTAR ALINHAR O MENU*/
+/*texto menu*/
+nav {
+    font-size: large;
+    padding-top: 15px;
+    /*todo o bloco tem um padding de 25px do topo*/
+}
+
+
+.menu-vertical ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
 }
 
 nav ul li {
-    padding: 10px 20px;
+    padding: 10px 20px 30px 10px;
     cursor: pointer;
 }
 
@@ -88,7 +110,6 @@ nav ul li a {
     color: azure;
     text-decoration: none;
     list-style: none;
-    
 }
 
 /*Configurações do submenu*/
@@ -100,7 +121,7 @@ nav ul li .submenu a {
 }
 
 nav ul .submenu {
-    display:none;
+    display: none;
 }
 
 nav ul li:hover .submenu {
@@ -113,6 +134,46 @@ nav ul li:hover .submenu {
 }
 
 nav ul li a img {
-    filter: invert(1); /*inverte a cor da imagem. Era preta inverteu para branca*/
-    
+    filter: invert(1);
+    /*inverte a cor da imagem. Era preta inverteu para branca*/
+    padding-right: 10px;
+    padding-bottom: 0;
+    margin: 0;
+    width: 35px;
+    vertical-align: middle;
+}
+
+nav ul li ul li a img {
+    filter:grayscale(1);
+}
+
+main {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: whitesmoke;
+}
+
+footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(16, 112, 179);
+}
+
+footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-contato {
+    align-items: center;
+    color: white;
+}
+
+.redes-sociais a img {
+    filter: invert(1);
+    width: 8%;
+    padding: 5px;
 }
